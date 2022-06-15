@@ -22,7 +22,8 @@
             </#if>
         </ul>
 
-        <div class="navbar-text mr-3">${name}</div>
-        <@l.logout />
+        <div class="navbar-text mr-3">Имя: ${name}</div>
+
+        <@l.logout Session.SPRING_SECURITY_CONTEXT??/>
     </div>
 </nav>

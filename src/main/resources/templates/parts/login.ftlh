@@ -18,11 +18,16 @@
     </form>
 </#macro>
 
-<#macro logout>
-    <form action="/logout" method="post">
-    <input type="hidden" name="_csrf" value="${_csrf.token}"/>
-    <form action="/logout" method="post">
-        <input type="hidden" name="_csrf" value="${_csrf.token}"/>
-        <button class="btn btn-primary" type="submit">Выйти из профиля</button>
-    </form>
+<#macro logout isLogged>
+    <#if isLogged>
+        <form action="/logout" method="post">
+            <input type="hidden" name="_csrf" value="${_csrf.token}"/>
+            <button class="btn btn-primary" type="submit">Выйти из профиля</button>
+        </form>
+        <#else>
+            <form action="/login">
+                <input type="hidden" name="_csrf" value="${_csrf.token}"/>
+                <button class="btn btn-primary">Войти</button>
+            </form>
+    </#if>
 </#macro>
