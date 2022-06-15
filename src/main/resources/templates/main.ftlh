@@ -5,6 +5,11 @@
     <div>
         <@l.logout />
     </div>
+    <p>
+        <form action="/user">
+            <button>User list</button>
+        </form>
+    </p>
     <div>
         <form method="post">
             <input type="text" name="text" placeholder="Введите сообщение"/>
