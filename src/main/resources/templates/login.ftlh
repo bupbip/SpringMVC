@@ -1,11 +1,6 @@
-<#import "parts/common.ftlh" as c>
 <#import "parts/login.ftlh" as l>
+<#import "parts/common.ftlh" as c>
+
 <@c.page>
-Login page
-<@l.login "/login" />
-<div>
-    <form action="/registration">
-        <button>Registration</button>
-    </form>
-</div>
+    <@l.login "/login" false/>
 </@c.page>
