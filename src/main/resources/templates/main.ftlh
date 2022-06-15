@@ -13,10 +13,9 @@
             <button type="submit">Добавить</button>
         </form>
     </div>
-    <div>Список сообщений</div>
-    <form method="post" action="filter">
-        <input type="text" name="filter">
-        <input type="hidden" name="_csrf" value="${_csrf.token}" />
+    <div>Список сообщений:</div>
+    <form method="get" action="/main">
+        <input type="text" name="filter" value="${filter}" placeholder="Введите тэг для поиска">
         <button type="submit">Найти</button>
     </form>
     <#list messages as message>
