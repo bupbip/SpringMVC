@@ -22,7 +22,9 @@
             </#if>
         </ul>
 
-        <div class="navbar-text mr-3">Имя: ${name}</div>
+        <#if Session.SPRING_SECURITY_CONTEXT??>
+            <a class="nav-link mr-3 color:DodgerBlue" href="/account/${user.id}">${name}</a>
+        </#if>
 
         <@l.logout Session.SPRING_SECURITY_CONTEXT??/>
     </div>
