@@ -24,6 +24,7 @@
 
         <#if Session.SPRING_SECURITY_CONTEXT??>
             <a class="nav-link mr-3 color:DodgerBlue" href="/account/${user.id}">${name}</a>
+            <a class="mr-3"> Баланс: ${balance}</a>
         </#if>
 
         <@l.logout Session.SPRING_SECURITY_CONTEXT??/>
