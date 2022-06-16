@@ -15,6 +15,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="/main">Сообщения</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/coin">Монетка</a>
+            </li>
             <#if isAdmin>
                 <li class="nav-item">
                     <a class="nav-link" href="/user">Список пользователей</a>
@@ -24,7 +27,7 @@
 
         <#if Session.SPRING_SECURITY_CONTEXT??>
             <a class="nav-link mr-3 color:DodgerBlue" href="/account/${user.id}">${name}</a>
-            <a class="mr-3"> Баланс: ${balance}</a>
+            <a class="mr-3"> Баланс: ${user.balance}</a>
         </#if>
 
         <@l.logout Session.SPRING_SECURITY_CONTEXT??/>
