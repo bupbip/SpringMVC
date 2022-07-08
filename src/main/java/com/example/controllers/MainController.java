@@ -20,7 +20,7 @@ import java.util.UUID;
 
 @Controller
 public class MainController {
-    @Autowired
+    @Autowired()
     private MessageRepo messageRepo;
 
     @Value("${upload.path}")

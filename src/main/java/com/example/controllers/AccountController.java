@@ -11,12 +11,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.persistence.FetchType;
 import java.math.BigInteger;
 import java.util.Map;
 
 @Controller
 public class AccountController {
-    @Autowired
+    @Autowired()
     private UserRepo userRepo;
 
     @GetMapping("account/{user}")
@@ -36,6 +37,7 @@ public class AccountController {
             user.setBalance(user.getBalance().add(amount));
         }
         model.addAttribute("user", user);
+        model.addAttribute("balance", user.getBalance());
         userRepo.save(user);
         return "redirect:/account/" + user.getId();
     }

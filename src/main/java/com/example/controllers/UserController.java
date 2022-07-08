@@ -33,7 +33,7 @@ public class UserController {
 
     @GetMapping("{user}")
     public String userEditForm(@PathVariable User user, Model model) {  // берем пользователя из БД
-        model.addAttribute("users", userRepo.findAll());
+        model.addAttribute("user", user);
         model.addAttribute("roles", Role.values());
         return "userEdit";
     }
